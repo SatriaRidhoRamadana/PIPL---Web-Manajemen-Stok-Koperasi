@@ -1,4 +1,22 @@
-.DS_Store
+node_modules/
+/.pnp/
+/.pnp.js
+/.cache/
+dist/
+build/
+assets/css/tailwind.css
+assets/js/alpine.js
+/.parcel-cache/
+*.log
+env
+.env
+/.vscode/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.idea/
+vendor/
+/.DS_Store.DS_Store
 
 application/cache/*
 !application/cache/index.html
