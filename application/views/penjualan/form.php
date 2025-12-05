@@ -37,7 +37,7 @@
                 </tbody>
             </table>
         </div>
-        <button type="button" class="btn btn-outline-primary mb-4" data-target="#table-penjualan" onclick="addItemRow(this)">Tambah Baris</button>
+        <button type="button" class="btn btn-primary mb-4" data-target="#table-penjualan" onclick="addItemRow(this)">Tambah Baris</button>
 
         <div class="row g-3">
             <div class="col-md-6">

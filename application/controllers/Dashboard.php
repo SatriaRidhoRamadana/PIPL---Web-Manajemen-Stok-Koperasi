@@ -30,7 +30,8 @@ class Dashboard extends MY_Controller
             'total_barang' => $this->db->count_all('barang'),
             'total_transaksi' => $this->Penjualan_model->get_total_transactions_today(),
             'omzet_hari_ini' => $this->Penjualan_model->get_total_today(),
-            'low_stock' => $this->Barang_model->get_low_stock(),
+            // low stock threshold set to 10
+            'low_stock' => $this->Barang_model->get_low_stock(10, 10),
             'chart_data' => $this->Penjualan_model->get_chart_data(7),
         );
 

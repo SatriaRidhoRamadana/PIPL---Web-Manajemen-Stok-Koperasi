@@ -6,11 +6,7 @@
     <title><?= isset($title) ? $title.' | ' : ''; ?>Koperasi POS</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css">
-    <style>
-        body { background-color: #f5f6fa; }
-        .navbar-brand { font-weight: 700; letter-spacing: 0.5px; }
-        .card { border: none; border-radius: 12px; box-shadow: 0 4px 20px rgba(76, 83, 102, 0.08); }
-    </style>
+    <link rel="stylesheet" href="<?= base_url('assets/css/custom.css'); ?>">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -66,7 +62,7 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid py-4">
+    <div class="container-fluid py-4 app-background">
         <?php $this->load->view('layouts/flash'); ?>
 
 

@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h4 class="mb-0">Detail Penjualan</h4>
     <div>
-        <a href="javascript:window.print();" class="btn btn-outline-secondary">Cetak</a>
+        <a href="javascript:window.print();" class="btn btn-primary">Cetak</a>
         <a href="<?= site_url('penjualan'); ?>" class="btn btn-light">Kembali</a>
     </div>
 </div>

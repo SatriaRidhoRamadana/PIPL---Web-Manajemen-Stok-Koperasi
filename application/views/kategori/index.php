@@ -1,26 +1,27 @@
-<div class="row g-4">
-    <div class="col-lg-4">
-        <div class="card p-4">
-            <h5 class="mb-3">Tambah Kategori</h5>
-            <?= form_open('kategori/store'); ?>
-                <div class="mb-3">
-                    <label class="form-label">Nama Kategori</label>
-                    <input type="text" name="nama_kategori" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Kode Kategori</label>
-                    <input type="text" name="kode_kategori" class="form-control" required>
-                    <div class="form-text">Kode singkat (tanpa spasi), akan menjadi prefix pada SKU barang.</div>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Simpan</button>
-            <?= form_close(); ?>
+<div class="content-area">
+    <div class="row g-4">
+        <div class="col-lg-4">
+            <div class="card p-4 panel-surface">
+                <h5 class="mb-3">Tambah Kategori</h5>
+                <?= form_open('kategori/store'); ?>
+                    <div class="mb-3">
+                        <label class="form-label">Nama Kategori</label>
+                        <input type="text" name="nama_kategori" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Kode Kategori</label>
+                        <input type="text" name="kode_kategori" class="form-control" required>
+                        <div class="form-text">Kode singkat (tanpa spasi), akan menjadi prefix pada SKU barang.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Simpan</button>
+                <?= form_close(); ?>
+            </div>
         </div>
-    </div>
-    <div class="col-lg-8">
-        <div class="card p-3">
-            <h5>Daftar Kategori</h5>
-            <div class="table-responsive mt-3">
-                <table class="table table-striped datatable">
+        <div class="col-lg-8">
+            <div class="card p-3 panel-surface">
+                <h5>Daftar Kategori</h5>
+                <div class="table-responsive mt-3">
+                <table class="table table-striped table-sm datatable align-middle">
                     <thead>
                         <tr>
                             <th>Nama Kategori</th>
@@ -30,7 +31,7 @@
                     <tbody>
                         <?php foreach ($kategori as $kat): ?>
                             <tr>
-                                    <td><?= $kat->nama_kategori; ?></td>
+                                    <td class="td-truncate"><?= $kat->nama_kategori; ?></td>
                                     <td>
                                         <div class="d-flex gap-2">
                                             <button type="button" class="btn btn-sm btn-primary btn-edit-kategori" 
@@ -47,6 +48,8 @@
                         <?php endforeach; ?>
                     </tbody>
                 </table>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

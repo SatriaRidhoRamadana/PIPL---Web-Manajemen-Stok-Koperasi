@@ -1,0 +1,172 @@
+/* Custom Bootstrap enhancements: subtle depth, gradients, accents */
+:root{
+  --brand:#165f3d; /* dark green primary */
+  --brand-dark:#0f4a2d; /* darker green */
+  --brand-bright: #28a745; /* bright green */
+  --brand-bright-dark: #1e7a33;
+  --muted-bg:#eef7ee; /* pale green page background */
+  --card-radius:12px;
+}
+
+/* page backdrop: soft green gradient to reduce pure white surfaces */
+body{
+  background: radial-gradient(circle at 10% 10%, rgba(240,250,242,0.95), rgba(238,247,238,0.95) 8%, rgba(236,246,236,0.9) 25%), linear-gradient(180deg, #f6fbf6 0%, #eef7ee 100%);
+  color: #15302a;
+  font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* main content wrapper: apply soft, slightly-tinted surface so whole page isn't white */
+.app-background{
+  background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.35));
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+/* place a soft inset container to hold main panels */
+.app-background > .container-lg,
+.app-background > .container,
+.app-background > .container-fluid > .container-lg{
+  background: transparent;
+}
+
+/* Navbar: soft gradient and stronger brand */
+.navbar.bg-primary{
+  background: linear-gradient(90deg, rgba(22,95,61,1) 0%, rgba(15,74,45,1) 100%);
+}
+.navbar .navbar-brand{ font-weight:700; letter-spacing:0.4px; }
+
+/* Cards: softer corners and elevated shadow — use bright green surface */
+.card{
+  border: none;
+  border-radius: var(--card-radius);
+  box-shadow: 0 6px 20px rgba(15,74,45,0.06);
+  /* Use the same dark-green palette as navbar for a subtle, consistent look */
+  background: linear-gradient(90deg, var(--brand) 0%, var(--brand-dark) 100%);
+  color: #ffffff;
+}
+.card .card-header{ background: transparent; border-bottom: none; padding-bottom:0.5rem; }
+.card-accent{ border-left: 4px solid rgba(22,95,61,0.12); }
+
+/* Ensure form controls inside colored cards stay readable */
+/* form controls inside cards keep white background and dark input text for usability */
+.card .form-control, .card input, .card textarea, .card select{ background: #ffffff !important; color: #15302a !important; }
+.card a{ color: #fff; }
+
+/* Improve font contrast inside cards */
+.card h1,.card h2,.card h3,.card h4,.card h5,.card h6,
+.card .form-label, .card label, .card .fw-bold{
+  color: #fff !important;
+  font-weight: 700;
+}
+
+/* If there's black text inside a card, give it a light pill background for contrast */
+.card .text-dark{
+  /* Avoid dark fonts inside cards: render as white for contrast */
+  color: #fff !important;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  display: inline !important;
+  font-weight: 700;
+}
+
+/* Labels often use .text-muted; inside colored cards make them visible */
+.card .text-muted{
+  color: rgba(255,255,255,0.92) !important;
+  opacity: 1 !important;
+  font-weight: 600 !important;
+}
+
+/* Buttons: gentle gradient and lift on hover */
+.btn-primary{
+  background: linear-gradient(180deg,var(--brand) 0%, var(--brand-dark) 100%);
+  border: none;
+  box-shadow: 0 6px 18px rgba(21,80,54,0.12);
+}
+.btn-primary:hover, .btn-primary:focus{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(15,74,45,0.14);
+}
+.btn-outline-light{
+  border-radius:8px;
+}
+
+/* DataTables / tables: card-like container + softer header */
+.dataTables_wrapper{ padding: 0.5rem; }
+.table{
+  background: linear-gradient(180deg, #fdfefd 0%, #fafcfa 100%);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(19,36,60,0.10);
+  border-collapse: collapse;
+}
+
+/* table header and body borders for clearer separation */
+.table thead th{
+  background: linear-gradient(90deg, rgba(247,249,252,1) 0%, rgba(245,247,250,1) 100%);
+  border-bottom: 1px solid rgba(19,36,60,0.10);
+}
+.table th, .table td{
+  border-bottom: 1px solid rgba(19,36,60,0.06);
+}
+.table.table-bordered th, .table.table-bordered td{
+  border: 1px solid rgba(19,36,60,0.06);
+}
+.table tbody tr:last-child td{
+  border-bottom: none;
+}
+.table-hover tbody tr:hover{ background: rgba(22,95,61,0.06); transform: translateY(0); }
+
+/* Pagination: subtle rounded active */
+.pagination .page-item .page-link{
+  border-radius: 8px;
+}
+.pagination .page-item.active .page-link{
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(21,80,54,0.12);
+}
+
+/* Alerts/flash messages */
+.alert{ border-radius: 10px; box-shadow: 0 6px 18px rgba(33,40,57,0.04); }
+
+/* Panels: subtle tinted surfaces for sections (not pure white) */
+/* panel-surface: lighter surface used inside cards for nested panels */
+.panel-surface{ background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(250,255,250,0.92)); border-radius: 12px; padding: 0.75rem; }
+.card.panel-surface{ padding: 0; background: linear-gradient(90deg, var(--brand) 0%, var(--brand-dark) 100%); }
+
+/* Slight shadow and subtle border for content areas (soft green-tinted) */
+.content-area{ background: rgba(250,255,250,0.92); border-radius: 12px; box-shadow: 0 10px 30px rgba(21,80,54,0.06); padding: 1rem; }
+
+/* Footer spacing */
+footer{ margin-top: 1.5rem; }
+
+/* Small UI niceties */
+.badge{ border-radius: 6px; }
+.form-control{ border-radius: 8px; }
+
+/* Slightly larger table controls spacing */
+.dataTables_length, .dataTables_filter{ padding: 0.4rem 0.25rem; }
+
+/* Table cell alignment and truncation for tidier presentation */
+.table td, .table th { vertical-align: middle; }
+.td-truncate { max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.table .actions { white-space: nowrap; }
+
+/* Make links in nav clearer */
+.navbar .nav-link{ color: rgba(255,255,255,0.95); }
+.navbar .nav-link.active{ font-weight:600; }
+
+/* Responsive minor adjustments */
+@media (max-width:767px){
+  .navbar-brand{ font-size:1.05rem; }
+}
+
+/* Buttons: ensure readable text color on colored buttons */
+.btn{ color: #fff !important; }
+
+/* Keep form controls readable: dark text on light background */
+.form-control, input, textarea, select{ color: #15302a !important; }
+
+/* Utility to opt-out of any special text styles */
+.no-outline { text-shadow: none !important; }

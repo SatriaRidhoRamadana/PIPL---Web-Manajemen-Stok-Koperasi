@@ -10,9 +10,44 @@
         }
 
         $(function () {
-            $('.datatable').DataTable({
-                pageLength: 10,
-                language: { search: "Cari:", lengthMenu: "Tampil _MENU_", info: "Menampilkan _START_ - _END_ dari _TOTAL_" }
+            const dtLang = { search: "Cari:", lengthMenu: "Tampil _MENU_", info: "Menampilkan _START_ - _END_ dari _TOTAL_" };
+
+            $('.datatable').each(function () {
+                const $table = $(this);
+                const colCount = $table.find('thead th').length;
+
+                // base options
+                const opts = {
+                    pageLength: 10,
+                    language: dtLang,
+                    autoWidth: false,
+                    responsive: true,
+                };
+
+                // apply sensible column widths depending on table shape
+                if (colCount >= 6) {
+                    // typical barang table: [kode, nama, kategori, harga, stok, aksi]
+                    opts.columnDefs = [
+                        { targets: 0, width: '90px', className: 'text-nowrap' },
+                        { targets: 3, width: '120px', className: 'text-end' },
+                        { targets: 4, width: '90px', className: 'text-end' },
+                        { targets: 5, orderable: false, width: '140px', className: 'text-center' }
+                    ];
+                } else if (colCount === 2) {
+                    // simple list with name + actions
+                    opts.columnDefs = [
+                        { targets: 0, width: '65%' },
+                        { targets: 1, orderable: false, width: '35%', className: 'text-center' }
+                    ];
+                } else if (colCount === 3 || colCount === 4) {
+                    // penjualan: [kode, waktu, total, ...]
+                    opts.columnDefs = [
+                        { targets: 0, width: '110px', className: 'text-nowrap' },
+                        { targets: -1, orderable: false, width: '120px', className: 'text-center' }
+                    ];
+                }
+
+                $table.DataTable(opts);
             });
         });
 

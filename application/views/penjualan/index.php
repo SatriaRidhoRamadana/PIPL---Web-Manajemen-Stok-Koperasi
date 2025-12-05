@@ -1,10 +1,11 @@
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="mb-0">Penjualan Hari Ini</h4>
-    <a href="<?= site_url('penjualan/create'); ?>" class="btn btn-primary">Transaksi Baru</a>
-</div>
-<div class="card p-3">
-    <div class="table-responsive">
-        <table class="table table-striped datatable">
+<div class="content-area">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="mb-0">Penjualan Hari Ini</h4>
+        <a href="<?= site_url('penjualan/create'); ?>" class="btn btn-primary">Transaksi Baru</a>
+    </div>
+    <div class="card p-3 panel-surface">
+        <div class="table-responsive">
+            <table class="table table-striped table-sm datatable align-middle">
             <thead>
                 <tr>
                     <th>Kode</th>
@@ -18,7 +19,7 @@
             <tbody>
                 <?php foreach ($penjualan as $row): ?>
                     <tr>
-                        <td><?= $row->kode_penjualan; ?></td>
+                        <td class="text-nowrap"><?= $row->kode_penjualan; ?></td>
                         <td><?= date('d/m/Y H:i', strtotime($row->tanggal)); ?></td>
                         <td class="text-end">Rp <?= number_format($row->total, 0, ',', '.'); ?></td>
                         <td class="text-end">Rp <?= number_format($row->bayar, 0, ',', '.'); ?></td>
@@ -30,6 +31,7 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+        </div>
     </div>
 </div>
 

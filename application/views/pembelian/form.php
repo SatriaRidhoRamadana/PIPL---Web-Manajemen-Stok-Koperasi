@@ -39,7 +39,7 @@
                 </tbody>
             </table>
         </div>
-        <button type="button" class="btn btn-outline-primary mb-4" data-target="#table-pembelian" onclick="addItemRow(this)">Tambah Baris</button>
+        <button type="button" class="btn btn-primary mb-4" data-target="#table-pembelian" onclick="addItemRow(this)">Tambah Baris</button>
 
         <div class="row">
             <div class="col-md-4 ms-auto">

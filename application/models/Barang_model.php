@@ -70,11 +70,11 @@ class Barang_model extends CI_Model
                         ->update($this->table);
     }
 
-    public function get_low_stock($limit = 5)
+    public function get_low_stock($limit = 10, $threshold = 10)
     {
-        return $this->db->where('stok <=', 5)
+        return $this->db->where('stok <=', (int) $threshold)
                         ->order_by('stok', 'ASC')
-                        ->limit($limit)
+                        ->limit((int) $limit)
                         ->get($this->table)
                         ->result();
     }

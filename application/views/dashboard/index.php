@@ -49,7 +49,15 @@
                         <?php foreach ($low_stock as $item): ?>
                             <tr>
                                 <td><?= $item->nama_barang; ?></td>
-                                <td class="text-end"><span class="badge bg-danger"><?= $item->stok; ?></span></td>
+                                <td class="text-end">
+                                    <?php if ($item->stok == 0): ?>
+                                        <span class="badge bg-dark">Habis</span>
+                                    <?php elseif ($item->stok <= 3): ?>
+                                        <span class="badge bg-danger"><?= $item->stok; ?></span>
+                                    <?php else: ?>
+                                        <span class="badge bg-warning text-dark"><?= $item->stok; ?></span>
+                                    <?php endif; ?>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                         <?php if (empty($low_stock)): ?>
@@ -81,9 +89,19 @@
             }]
         },
         options: {
-            plugins: { legend: { display: false } },
+            plugins: {
+                legend: { display: false, labels: { color: '#fff' } },
+                tooltip: { titleColor: '#fff', bodyColor: '#fff' }
+            },
             scales: {
-                y: { ticks: { callback: (value) => 'Rp ' + value.toLocaleString('id-ID') } }
+                x: { ticks: { color: '#fff' }, grid: { color: 'rgba(255,255,255,0.06)' } },
+                y: {
+                    ticks: {
+                        color: '#fff',
+                        callback: (value) => 'Rp ' + value.toLocaleString('id-ID')
+                    },
+                    grid: { color: 'rgba(255,255,255,0.06)' }
+                }
             }
         }
     });
