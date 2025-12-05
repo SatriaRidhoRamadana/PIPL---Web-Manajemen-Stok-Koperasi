@@ -177,13 +177,13 @@
         <mxCell id="34" value="Backup Data" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="600" y="500" width="80" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="33" style="endArrow=block;html=1;endFill=1;" edge="1" parent="1" source="26" target="29">
+        <mxCell id="45" style="endArrow=block;html=1;endFill=1;" edge="1" parent="1" source="26" target="29">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="115" y="260" as="sourcePoint" />
             <mxPoint x="240" y="130" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="34" style="endArrow=block;html=1;endFill=1;" edge="1" parent="1" source="26" target="30">
+        <mxCell id="46" style="endArrow=block;html=1;endFill=1;" edge="1" parent="1" source="26" target="30">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="115" y="260" as="sourcePoint" />
             <mxPoint x="140" y="330" as="targetPoint" />
@@ -272,31 +272,31 @@
         <mxCell id="45" value="&lt;b&gt;DetailPembelian&lt;/b&gt;&lt;br&gt;+ id: int&lt;br&gt;+ pembelian_id: int&lt;br&gt;+ barang_id: int&lt;br&gt;+ qty: int&lt;br&gt;+ harga_beli: decimal&lt;br&gt;+ subtotal: decimal" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="300" y="550" width="160" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="44" style="endArrow=block;startArrow=block;html=1;endFill=1;startFill=1;" edge="1" parent="1" source="39" target="40">
+        <mxCell id="48" style="endArrow=block;startArrow=block;html=1;endFill=1;startFill=1;" edge="1" parent="1" source="39" target="40">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="260" y="190" as="sourcePoint" />
             <mxPoint x="300" y="160" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="45" style="endArrow=block;startArrow=block;html=1;endFill=1;startFill=1;" edge="1" parent="1" source="41" target="42">
+        <mxCell id="49" style="endArrow=block;startArrow=block;html=1;endFill=1;startFill=1;" edge="1" parent="1" source="41" target="42">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="260" y="390" as="sourcePoint" />
             <mxPoint x="300" y="380" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="46" style="endArrow=block;startArrow=block;html=1;endFill=1;startFill=1;" edge="1" parent="1" source="39" target="42">
+        <mxCell id="50" style="endArrow=block;startArrow=block;html=1;endFill=1;startFill=1;" edge="1" parent="1" source="39" target="42">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="260" y="280" as="sourcePoint" />
             <mxPoint x="300" y="320" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="46" style="endArrow=block;startArrow=block;html=1;endFill=1;startFill=1;" edge="1" parent="1" source="44" target="45">
+        <mxCell id="51" style="endArrow=block;startArrow=block;html=1;endFill=1;startFill=1;" edge="1" parent="1" source="44" target="45">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="260" y="610" as="sourcePoint" />
             <mxPoint x="300" y="620" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="47" style="endArrow=block;startArrow=block;html=1;endFill=1;startFill=1;" edge="1" parent="1" source="39" target="45">
+        <mxCell id="52" style="endArrow=block;startArrow=block;html=1;endFill=1;startFill=1;" edge="1" parent="1" source="39" target="45">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="260" y="300" as="sourcePoint" />
             <mxPoint x="300" y="550" as="targetPoint" />
