@@ -4,7 +4,7 @@
   --brand-dark:#0f4a2d; /* darker green */
   --brand-bright: #28a745; /* bright green */
   --brand-bright-dark: #1e7a33;
-  --muted-bg:#eef7ee; /* pale green page background */
+  --muted-bg:#fafbfa; /* pale green page background */
   --card-radius:12px;
 }
 
@@ -117,14 +117,28 @@ body{
 }
 .table-hover tbody tr:hover{ background: rgba(22,95,61,0.06); transform: translateY(0); }
 
-/* Pagination: subtle rounded active */
+/* Pagination: hijau dengan teks putih */
 .pagination .page-item .page-link{
   border-radius: 8px;
+  background: var(--brand);
+  color: #fff !important;
+  border-color: var(--brand-dark);
+}
+.pagination .page-item .page-link:hover,
+.pagination .page-item .page-link:focus{
+  background: var(--brand-dark);
+  color: #fff !important;
+  border-color: var(--brand-dark);
 }
 .pagination .page-item.active .page-link{
-  background: var(--brand);
-  color: #fff;
+  background: var(--brand-dark);
+  color: #fff !important;
   box-shadow: 0 6px 18px rgba(21,80,54,0.12);
+}
+.pagination .page-item.disabled .page-link{
+  background: var(--brand);
+  color: rgba(255,255,255,0.7) !important;
+  opacity: 0.8;
 }
 
 /* Alerts/flash messages */
@@ -194,3 +208,7 @@ footer{ margin-top: 1.5rem; }
 
 /* Utility to opt-out of any special text styles */
 .no-outline { text-shadow: none !important; }
+
+/* Detail button font color */
+.detail-btn { color: #000 !important; }
+.card .detail-btn { color: #000 !important; }

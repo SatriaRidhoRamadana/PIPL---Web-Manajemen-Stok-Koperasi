@@ -25,7 +25,7 @@
                         <td class="text-end">Rp <?= number_format($row->bayar, 0, ',', '.'); ?></td>
                         <td class="text-end">Rp <?= number_format($row->kembali, 0, ',', '.'); ?></td>
                         <td class="text-end">
-                            <a href="<?= site_url('penjualan/show/'.$row->id_penjualan); ?>" class="btn btn-sm btn-outline-secondary text-dark">Detail</a>
+                            <a href="<?= site_url('penjualan/show/'.$row->id_penjualan); ?>" class="btn btn-sm btn-outline-secondary text-dark detail-btn">Detail</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
