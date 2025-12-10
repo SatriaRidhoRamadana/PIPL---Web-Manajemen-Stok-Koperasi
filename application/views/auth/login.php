@@ -9,27 +9,60 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/custom.css'); ?>">
     <style>
         body { 
-            background: #f5f5f5; 
-            min-height: 100vh; 
             color: #333;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
         }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('<?= base_url("assets/img/building.jpg"); ?>');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 74, 45, 0.5);
+            z-index: -1;
+        }
+
         .login-container {
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            z-index: 1;
         }
+
         .card { 
             border: none; 
             border-radius: 18px; 
-            box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.3);
             background: linear-gradient(120deg, var(--brand), var(--brand-dark));
             color: #fff;
         }
+
         .card .text-muted { color: rgba(255,255,255,0.85); }
         .card h3 { color: #fff; font-family: 'Nunito', sans-serif; }
         .card .form-control { 
@@ -49,7 +82,7 @@
                         <div class="text-center mb-4">
                             <img src="<?= base_url('assets/img/MAN1Batam.png'); ?>" alt="Logo MAN 1 Batam" style="width: 80px; height: 80px; margin-bottom: 15px;">
                             <h3 class="mb-0">Koperasi MAN 1 Batam</h3>
-                            <small class="text-muted">Silakan login untuk melanjutkan</small>
+                            <small class="text-muted">Manajemen Transaksi dan Stok serta Laporan Penjualan</small>
                         </div>
                         <?php if (!empty($error)): ?>
                             <div class="alert alert-danger"><?= $error; ?></div>
@@ -72,3 +105,4 @@
     </div>
 </body>
 </html>
+

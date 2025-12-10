@@ -1,6 +1,6 @@
 <div class="content-area">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h4 class="mb-0">Penjualan Hari Ini</h4>
+        <h4 class="mb-0 text-white">Riwayat Penjualan</h4>
         <a href="<?= site_url('penjualan/create'); ?>" class="btn btn-primary">Transaksi Baru</a>
     </div>
     <div class="card p-3 panel-surface">

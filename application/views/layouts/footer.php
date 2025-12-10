@@ -1,4 +1,16 @@
     </div>
+    <footer class="app-footer no-print">
+        <div class="row align-items-center gy-2">
+            <div class="col-md-8">
+                <div class="footer-brand">Koperasi MAN 1 Batam</div>
+                <div class="text-muted small">Manajemen Transaksi dan Stok serta Laporan Penjualan.</div>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <div class="text-muted small">Kontak: koperasi@man1batam.sch.id</div>
+                <div class="text-muted small">Jl. Brigjen Katamso No.10 29439 Batam</div>
+            </div>
+        </div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>

@@ -1,21 +1,41 @@
+<?php
+    $periode = ($start_date && $end_date)
+        ? date('d/m/Y', strtotime($start_date)).' - '.date('d/m/Y', strtotime($end_date))
+        : 'Semua periode';
+?>
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="mb-0">Laporan Pembelian</h4>
-    <button class="btn btn-primary" onclick="window.print();">Cetak</button>
+    <h4 class="mb-0 text-white">Laporan Pembelian</h4>
+    <button class="btn btn-primary no-print" onclick="window.print();">Cetak</button>
 </div>
+
+<div class="print-header d-none d-print-block mb-3">
+    <div class="d-flex align-items-center mb-2" style="gap: 8px;">
+        <img src="<?= base_url('assets/img/MAN1Batam.png'); ?>" alt="Logo" style="width: 35px; height: 35px;">
+        <div>
+            <div class="title" style="font-size: 0.95rem; margin: 0;">Koperasi MAN 1 Batam</div>
+            <div class="print-meta" style="font-size: 0.7rem; margin: 0;">Jl. Brigjen Katamso No.10, Batam</div>
+        </div>
+    </div>
+    <div class="print-meta" style="font-size: 0.8rem; margin: 0.25rem 0; font-weight: 600;">Laporan Pembelian</div>
+    <div class="print-meta" style="font-size: 0.7rem; margin: 0.1rem 0;">Periode: <?= $periode; ?> | Dicetak: <?= date('d/m/Y H:i'); ?></div>
+</div>
+
 <div class="card p-4">
-    <?= form_open('laporan/pembelian', ['method' => 'get', 'class' => 'row g-3']); ?>
-        <div class="col-md-4">
-            <label class="form-label">Mulai</label>
-            <input type="date" name="start_date" class="form-control" value="<?= $start_date; ?>">
-        </div>
-        <div class="col-md-4">
-            <label class="form-label">Sampai</label>
-            <input type="date" name="end_date" class="form-control" value="<?= $end_date; ?>">
-        </div>
-        <div class="col-md-4 d-flex align-items-end">
-            <button class="btn btn-primary w-100">Terapkan</button>
-        </div>
-    <?= form_close(); ?>
+    <div class="no-print">
+        <?= form_open('laporan/pembelian', ['method' => 'get', 'class' => 'row g-3']); ?>
+            <div class="col-md-4">
+                <label class="form-label">Mulai</label>
+                <input type="date" name="start_date" class="form-control" value="<?= $start_date; ?>">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Sampai</label>
+                <input type="date" name="end_date" class="form-control" value="<?= $end_date; ?>">
+            </div>
+            <div class="col-md-4 d-flex align-items-end">
+                <button class="btn btn-primary w-100">Terapkan</button>
+            </div>
+        <?= form_close(); ?>
+    </div>
 
     <div class="table-responsive mt-4">
         <table class="table table-striped">

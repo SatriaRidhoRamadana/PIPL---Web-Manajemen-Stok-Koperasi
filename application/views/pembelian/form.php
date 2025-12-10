@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="mb-0">Pembelian / Restock</h4>
+    <h4 class="mb-0 text-white">Pembelian / Restock</h4>
     <a href="<?= site_url('pembelian'); ?>" class="btn btn-light">Kembali</a>
 </div>
 <div class="card p-4">

@@ -7,6 +7,29 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/css/custom.css'); ?>">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar {
+            flex-shrink: 0;
+        }
+        .app-background {
+            flex: 1;
+            padding-top: 1.25rem;
+            padding-bottom: 1.25rem;
+            overflow-y: auto;
+        }
+        .app-footer {
+            flex-shrink: 0;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">

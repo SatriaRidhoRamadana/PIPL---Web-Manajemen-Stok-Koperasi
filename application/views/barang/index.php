@@ -1,6 +1,6 @@
 <div class="content-area">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h4 class="mb-0">Data Barang</h4>
+        <h4 class="mb-0 text-white">Data Barang</h4>
         <a href="<?= site_url('barang/create'); ?>" class="btn btn-primary">Tambah Barang</a>
     </div>
     <div class="card p-3 panel-surface">

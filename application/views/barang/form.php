@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="mb-0"><?= $barang ? 'Edit Barang' : 'Tambah Barang'; ?></h4>
+    <h4 class="mb-0 text-white"><?= $barang ? 'Edit Barang' : 'Tambah Barang'; ?></h4>
     <a href="<?= site_url('barang'); ?>" class="btn btn-light">Kembali</a>
 </div>
 <script>

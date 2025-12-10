@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="mb-0">Transaksi Penjualan</h4>
+    <h4 class="mb-0 text-white">Transaksi Penjualan</h4>
     <a href="<?= site_url('penjualan'); ?>" class="btn btn-light">Riwayat</a>
 </div>
 <div class="card p-4">
@@ -42,15 +42,15 @@
         <div class="row g-3">
             <div class="col-md-6">
                 <label class="form-label">Total</label>
-                <div class="form-control bg-light fw-bold" id="totalText">Rp 0</div>
+                <input type="text" class="form-control form-control-lg bg-white text-dark fw-bold" id="totalText" value="Rp 0" readonly>
             </div>
             <div class="col-md-3">
                 <label class="form-label">Uang Bayar</label>
-                <input type="number" name="bayar" class="form-control" id="inputBayar" required>
+                <input type="number" name="bayar" class="form-control form-control-lg bg-white text-dark" id="inputBayar" required>
             </div>
             <div class="col-md-3">
                 <label class="form-label">Kembalian</label>
-                <div class="form-control bg-light" id="kembalianText">Rp 0</div>
+                <input type="text" class="form-control form-control-lg bg-white text-dark" id="kembalianText" value="Rp 0" readonly>
             </div>
         </div>
         <div class="mt-4 text-end">
@@ -77,9 +77,9 @@
             const text = row.querySelector('.subtotal-text').innerText.replace(/[^0-9]/g, '');
             total += parseInt(text || 0);
         });
-        document.getElementById('totalText').innerText = formatRupiah(total);
+        document.getElementById('totalText').value = formatRupiah(total);
         const bayar = parseInt(document.getElementById('inputBayar').value || 0);
-        document.getElementById('kembalianText').innerText = formatRupiah(Math.max(bayar - total, 0));
+        document.getElementById('kembalianText').value = formatRupiah(Math.max(bayar - total, 0));
     }
 
     function handlePenjualanInput(e) {

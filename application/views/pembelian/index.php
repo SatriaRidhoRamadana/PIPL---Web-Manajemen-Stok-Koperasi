@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="mb-0">Riwayat Pembelian</h4>
+    <h4 class="mb-0 text-white">Riwayat Pembelian</h4>
     <a href="<?= site_url('pembelian/create'); ?>" class="btn btn-primary">Pembelian Baru</a>
 </div>
 <div class="card p-3">

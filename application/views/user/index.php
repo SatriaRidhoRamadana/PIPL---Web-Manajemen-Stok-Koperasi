@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="mb-0">Data Pengguna</h4>
+    <h4 class="mb-0 text-white">Data Pengguna</h4>
     <a href="<?= site_url('user/create'); ?>" class="btn btn-primary">Tambah User</a>
 </div>
 <div class="card p-3">

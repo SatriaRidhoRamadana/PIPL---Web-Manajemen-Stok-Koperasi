@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="mb-0">Laporan Penjualan</h4>
+    <h4 class="mb-0 text-white">Laporan Penjualan</h4>
     <button class="btn btn-primary" onclick="window.print();">Cetak</button>
 </div>
 <div class="card p-4">

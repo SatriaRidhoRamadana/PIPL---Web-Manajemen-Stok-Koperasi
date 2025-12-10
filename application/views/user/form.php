@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="mb-0"><?= $user ? 'Edit Pengguna' : 'Tambah Pengguna'; ?></h4>
+    <h4 class="mb-0 text-white"><?= $user ? 'Edit Pengguna' : 'Tambah Pengguna'; ?></h4>
     <a href="<?= site_url('user'); ?>" class="btn btn-light">Kembali</a>
 </div>
 <div class="card p-4">
