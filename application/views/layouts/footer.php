@@ -19,6 +19,7 @@
                 // base options
                 const opts = {
                     pageLength: 10,
+                    lengthMenu: [[5, 10, 20], [5, 10, 20]],
                     language: dtLang,
                     autoWidth: false,
                     responsive: true,
