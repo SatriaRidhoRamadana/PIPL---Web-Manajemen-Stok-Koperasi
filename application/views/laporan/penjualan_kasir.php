@@ -1,9 +1,21 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="mb-0">Laporan Penjualan Harian</h4>
+    <h4 class="mb-0">Laporan Penjualan</h4>
     <button class="btn btn-primary" onclick="window.print();">Cetak</button>
 </div>
 <div class="card p-4">
-    <p class="text-muted mb-3">Tanggal: <?= date('d/m/Y'); ?></p>
+    <?= form_open('laporan/penjualan_harian', ['method' => 'get', 'class' => 'row g-3 mb-3']); ?>
+        <div class="col-md-4">
+            <label class="form-label">Mulai</label>
+            <input type="date" name="start_date" class="form-control" value="<?= isset($start_date) ? $start_date : date('Y-m-d', strtotime('-30 days')); ?>">
+        </div>
+        <div class="col-md-4">
+            <label class="form-label">Sampai</label>
+            <input type="date" name="end_date" class="form-control" value="<?= isset($end_date) ? $end_date : date('Y-m-d'); ?>">
+        </div>
+        <div class="col-md-4 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100">Terapkan</button>
+        </div>
+    <?= form_close(); ?>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>

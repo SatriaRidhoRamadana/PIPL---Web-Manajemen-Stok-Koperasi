@@ -13,9 +13,13 @@ class Penjualan extends MY_Controller
 
     public function index()
     {
+        $start = $this->input->get('start_date') ?: date('Y-m-d', strtotime('-30 days'));
+        $end = $this->input->get('end_date') ?: date('Y-m-d');
         $data = array(
-            'title' => 'Riwayat Penjualan Hari Ini',
-            'penjualan' => $this->Penjualan_model->get_today(current_user('user_id')),
+            'title' => 'Riwayat Penjualan',
+            'penjualan' => $this->Penjualan_model->get_between_kasir($start, $end, current_user('user_id')),
+            'start_date' => $start,
+            'end_date' => $end,
         );
         $this->render('penjualan/index', $data);
     }
@@ -98,7 +102,6 @@ class Penjualan extends MY_Controller
             return redirect('penjualan/create');
         }
 
-        $this->session->set_flashdata('success', 'Transaksi berhasil disimpan');
         redirect('penjualan/show/'.$penjualan_id);
     }
 

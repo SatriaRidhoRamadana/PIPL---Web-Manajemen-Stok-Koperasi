@@ -53,9 +53,13 @@ class Laporan extends MY_Controller
     public function penjualan_harian()
     {
         check_role('kasir');
+        $start = $this->input->get('start_date') ?: date('Y-m-d', strtotime('-30 days'));
+        $end = $this->input->get('end_date') ?: date('Y-m-d');
         $data = array(
-            'title' => 'Laporan Penjualan Harian',
-            'penjualan' => $this->Penjualan_model->get_today(current_user('user_id')),
+            'title' => 'Laporan Penjualan',
+            'penjualan' => $this->Penjualan_model->get_between_kasir($start, $end, current_user('user_id')),
+            'start_date' => $start,
+            'end_date' => $end,
         );
         $this->render('laporan/penjualan_kasir', $data);
     }

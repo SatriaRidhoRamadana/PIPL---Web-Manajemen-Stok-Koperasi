@@ -16,9 +16,13 @@ class Dashboard extends MY_Controller
 
         if ($role === 'kasir') {
             check_role('kasir');
+            $start = $this->input->get('start_date') ?: date('Y-m-d', strtotime('-30 days'));
+            $end = $this->input->get('end_date') ?: date('Y-m-d');
             $data = array(
                 'title' => 'Dashboard Kasir',
-                'transactions' => $this->Penjualan_model->get_today(current_user('user_id')),
+                'transactions' => $this->Penjualan_model->get_between_kasir($start, $end, current_user('user_id')),
+                'start_date' => $start,
+                'end_date' => $end,
             );
             $this->render('dashboard/kasir', $data);
             return;

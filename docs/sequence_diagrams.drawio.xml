@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2025-12-10T12:00:00.000Z" agent="5.0" etag="sequence" version="24.8.0" type="device" pages="4">
+  <diagram id="seq_login" name="1. Sequence Login">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="actor1" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="40" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="lifeline1" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="115" y="200" width="10" height="500" as="geometry"/>
+        </mxCell>
+        <mxCell id="obj1" value="Browser" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="250" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="lifeline2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="295" y="200" width="10" height="500" as="geometry"/>
+        </mxCell>
+        <mxCell id="obj2" value="Auth Controller" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="450" y="100" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="lifeline3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="505" y="200" width="10" height="500" as="geometry"/>
+        </mxCell>
+        <mxCell id="obj3" value="User Model" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="670" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="lifeline4" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="715" y="200" width="10" height="500" as="geometry"/>
+        </mxCell>
+        <mxCell id="obj4" value="Database" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="870" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="lifeline5" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="915" y="200" width="10" height="500" as="geometry"/>
+        </mxCell>
+        <mxCell id="msg1" value="1. Buka halaman login" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1" source="lifeline1" target="lifeline2">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="130" y="230" as="sourcePoint"/>
+            <mxPoint x="290" y="230" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg2" value="2. Tampilkan form login" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1" source="lifeline2" target="lifeline1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="290" y="260" as="sourcePoint"/>
+            <mxPoint x="130" y="260" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg3" value="3. Input username &amp; password" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1" source="lifeline1" target="lifeline2">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="130" y="290" as="sourcePoint"/>
+            <mxPoint x="290" y="290" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg4" value="4. Submit form (POST)" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1" source="lifeline2" target="lifeline3">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="310" y="320" as="sourcePoint"/>
+            <mxPoint x="500" y="320" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg5" value="5. validate_login()" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1" source="lifeline3" target="lifeline4">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="520" y="350" as="sourcePoint"/>
+            <mxPoint x="710" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg6" value="6. SELECT user" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1" source="lifeline4" target="lifeline5">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="730" y="380" as="sourcePoint"/>
+            <mxPoint x="910" y="380" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg7" value="7. Return user data" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1" source="lifeline5" target="lifeline4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="910" y="410" as="sourcePoint"/>
+            <mxPoint x="730" y="410" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg8" value="8. Verify password_hash" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="725" y="440" as="sourcePoint"/>
+            <mxPoint x="725" y="470" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="780" y="440"/>
+              <mxPoint x="780" y="470"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg9" value="9. Return validation result" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1" source="lifeline4" target="lifeline3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="710" y="500" as="sourcePoint"/>
+            <mxPoint x="520" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg10" value="10. Set session user" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="515" y="530" as="sourcePoint"/>
+            <mxPoint x="515" y="560" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="570" y="530"/>
+              <mxPoint x="570" y="560"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg11" value="11. Check role" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="515" y="590" as="sourcePoint"/>
+            <mxPoint x="515" y="620" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="570" y="590"/>
+              <mxPoint x="570" y="620"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg12" value="12. Redirect by role" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1" source="lifeline3" target="lifeline2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="650" as="sourcePoint"/>
+            <mxPoint x="310" y="650" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg13" value="13. Navigate to dashboard" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1" source="lifeline2" target="lifeline1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="290" y="680" as="sourcePoint"/>
+            <mxPoint x="130" y="680" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note1" value="Login berhasil jika:&#xa;- Username ditemukan&#xa;- Password cocok&#xa;- Akun aktif" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="750" width="200" height="80" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="seq_kasir" name="2. Sequence Kasir (Transaksi)">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="k_actor" value="Kasir" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="40" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="k_ll1" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="95" y="200" width="10" height="900" as="geometry"/>
+        </mxCell>
+        <mxCell id="k_obj1" value="Browser" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="200" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="k_ll2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="245" y="200" width="10" height="900" as="geometry"/>
+        </mxCell>
+        <mxCell id="k_obj2" value="Penjualan&#xa;Controller" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="380" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="k_ll3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="425" y="200" width="10" height="900" as="geometry"/>
+        </mxCell>
+        <mxCell id="k_obj3" value="Barang Model" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="560" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="k_ll4" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="605" y="200" width="10" height="900" as="geometry"/>
+        </mxCell>
+        <mxCell id="k_obj4" value="Penjualan&#xa;Model" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="740" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="k_ll5" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="785" y="200" width="10" height="900" as="geometry"/>
+        </mxCell>
+        <mxCell id="k_obj5" value="Database" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="920" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="k_ll6" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="965" y="200" width="10" height="900" as="geometry"/>
+        </mxCell>
+        <mxCell id="k1" value="1. Cari barang" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="105" y="230" as="sourcePoint"/>
+            <mxPoint x="245" y="230" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k2" value="2. GET /penjualan/search" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="255" y="260" as="sourcePoint"/>
+            <mxPoint x="425" y="260" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k3" value="3. search_barang()" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="435" y="290" as="sourcePoint"/>
+            <mxPoint x="605" y="290" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4" value="4. SELECT barang" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="615" y="320" as="sourcePoint"/>
+            <mxPoint x="965" y="320" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k5" value="5. Return data barang" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="965" y="350" as="sourcePoint"/>
+            <mxPoint x="615" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k6" value="6. Check stok" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="615" y="380" as="sourcePoint"/>
+            <mxPoint x="615" y="410" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="670" y="380"/>
+              <mxPoint x="670" y="410"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k7" value="7. Return result barang" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="605" y="440" as="sourcePoint"/>
+            <mxPoint x="255" y="440" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k8" value="8. Tampilkan barang" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="245" y="470" as="sourcePoint"/>
+            <mxPoint x="105" y="470" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k9" value="9. Tambah ke keranjang" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="105" y="510" as="sourcePoint"/>
+            <mxPoint x="245" y="510" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k10" value="10. Add to session" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="255" y="540" as="sourcePoint"/>
+            <mxPoint x="425" y="540" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k11" value="11. Update keranjang" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="425" y="570" as="sourcePoint"/>
+            <mxPoint x="105" y="570" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k12" value="12. Proses pembayaran" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="105" y="610" as="sourcePoint"/>
+            <mxPoint x="245" y="610" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k13" value="13. POST /penjualan/save" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="255" y="640" as="sourcePoint"/>
+            <mxPoint x="425" y="640" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k14" value="14. Hitung total" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="435" y="670" as="sourcePoint"/>
+            <mxPoint x="435" y="700" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="490" y="670"/>
+              <mxPoint x="490" y="700"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k15" value="15. BEGIN TRANSACTION" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="435" y="730" as="sourcePoint"/>
+            <mxPoint x="965" y="730" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k16" value="16. create_penjualan()" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="435" y="760" as="sourcePoint"/>
+            <mxPoint x="785" y="760" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k17" value="17. INSERT penjualan" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="795" y="790" as="sourcePoint"/>
+            <mxPoint x="965" y="790" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k18" value="18. Return id_penjualan" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="965" y="820" as="sourcePoint"/>
+            <mxPoint x="795" y="820" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k19" value="19. Loop: Insert detail per item" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="795" y="850" as="sourcePoint"/>
+            <mxPoint x="965" y="850" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k20" value="20. Loop: Update stok barang" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="435" y="880" as="sourcePoint"/>
+            <mxPoint x="605" y="880" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k21" value="21. UPDATE barang SET stok" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="615" y="910" as="sourcePoint"/>
+            <mxPoint x="965" y="910" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k22" value="22. COMMIT" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="435" y="940" as="sourcePoint"/>
+            <mxPoint x="965" y="940" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k23" value="23. Clear session cart" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="435" y="970" as="sourcePoint"/>
+            <mxPoint x="435" y="1000" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="490" y="970"/>
+              <mxPoint x="490" y="1000"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k24" value="24. Redirect cetak nota" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="425" y="1030" as="sourcePoint"/>
+            <mxPoint x="105" y="1030" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k_note" value="Transaksi kasir:&#xa;- Cari dan cek stok barang&#xa;- Tambah ke keranjang (session)&#xa;- Proses pembayaran&#xa;- Insert data (transaction)&#xa;- Update stok otomatis&#xa;- Cetak nota" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1120" width="220" height="100" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="seq_owner" name="3. Sequence Owner (Laporan)">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="o_actor" value="Owner" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="40" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="o_ll1" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="115" y="200" width="10" height="600" as="geometry"/>
+        </mxCell>
+        <mxCell id="o_obj1" value="Browser" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="250" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="o_ll2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="295" y="200" width="10" height="600" as="geometry"/>
+        </mxCell>
+        <mxCell id="o_obj2" value="Dashboard&#xa;Controller" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="450" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="o_ll3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="495" y="200" width="10" height="600" as="geometry"/>
+        </mxCell>
+        <mxCell id="o_obj3" value="Laporan&#xa;Controller" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="630" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="o_ll4" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="675" y="200" width="10" height="600" as="geometry"/>
+        </mxCell>
+        <mxCell id="o_obj4" value="Models" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="810" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="o_ll5" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="855" y="200" width="10" height="600" as="geometry"/>
+        </mxCell>
+        <mxCell id="o_obj5" value="Database" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="990" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="o_ll6" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1035" y="200" width="10" height="600" as="geometry"/>
+        </mxCell>
+        <mxCell id="o1" value="1. Buka dashboard" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="125" y="230" as="sourcePoint"/>
+            <mxPoint x="295" y="230" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o2" value="2. GET /dashboard" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="305" y="260" as="sourcePoint"/>
+            <mxPoint x="495" y="260" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o3" value="3. Check role owner" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="505" y="290" as="sourcePoint"/>
+            <mxPoint x="505" y="320" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="560" y="290"/>
+              <mxPoint x="560" y="320"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o4" value="4. Get statistik (today)" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="505" y="350" as="sourcePoint"/>
+            <mxPoint x="855" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o5" value="5. SELECT penjualan, barang" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="865" y="380" as="sourcePoint"/>
+            <mxPoint x="1035" y="380" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o6" value="6. Return data" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1035" y="410" as="sourcePoint"/>
+            <mxPoint x="865" y="410" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o7" value="7. Render dashboard view" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="495" y="440" as="sourcePoint"/>
+            <mxPoint x="125" y="440" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o8" value="8. Pilih laporan" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="125" y="480" as="sourcePoint"/>
+            <mxPoint x="295" y="480" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o9" value="9. GET /laporan/[type]" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="305" y="510" as="sourcePoint"/>
+            <mxPoint x="675" y="510" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o10" value="10. Set filter (tanggal)" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="125" y="540" as="sourcePoint"/>
+            <mxPoint x="295" y="540" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o11" value="11. Apply filter" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="305" y="570" as="sourcePoint"/>
+            <mxPoint x="675" y="570" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o12" value="12. Query data by filter" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="685" y="600" as="sourcePoint"/>
+            <mxPoint x="855" y="600" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o13" value="13. SELECT by date range" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="865" y="630" as="sourcePoint"/>
+            <mxPoint x="1035" y="630" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o14" value="14. Return results" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1035" y="660" as="sourcePoint"/>
+            <mxPoint x="685" y="660" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o15" value="15. Render laporan view" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="675" y="690" as="sourcePoint"/>
+            <mxPoint x="125" y="690" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o16" value="16. Cetak PDF/Excel" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="125" y="730" as="sourcePoint"/>
+            <mxPoint x="295" y="730" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o17" value="17. Generate export" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="305" y="760" as="sourcePoint"/>
+            <mxPoint x="675" y="760" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o18" value="18. Download file" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="675" y="790" as="sourcePoint"/>
+            <mxPoint x="125" y="790" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o_note" value="Fitur Owner:&#xa;- Lihat dashboard (overview)&#xa;- Akses semua laporan&#xa;- Filter by tanggal&#xa;- Export PDF/Excel&#xa;- View-only (no CRUD)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="850" width="220" height="100" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="seq_admin" name="4. Sequence Admin (Kelola Data)">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="a_actor" value="Admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="40" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="a_ll1" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="115" y="200" width="10" height="700" as="geometry"/>
+        </mxCell>
+        <mxCell id="a_obj1" value="Browser" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="250" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="a_ll2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="295" y="200" width="10" height="700" as="geometry"/>
+        </mxCell>
+        <mxCell id="a_obj2" value="Barang&#xa;Controller" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="450" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="a_ll3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="495" y="200" width="10" height="700" as="geometry"/>
+        </mxCell>
+        <mxCell id="a_obj3" value="User&#xa;Controller" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="630" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="a_ll4" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="675" y="200" width="10" height="700" as="geometry"/>
+        </mxCell>
+        <mxCell id="a_obj4" value="Models" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="810" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="a_ll5" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="855" y="200" width="10" height="700" as="geometry"/>
+        </mxCell>
+        <mxCell id="a_obj5" value="Database" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="990" y="100" width="100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="a_ll6" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1035" y="200" width="10" height="700" as="geometry"/>
+        </mxCell>
+        <mxCell id="a1" value="1. Kelola Barang" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="125" y="230" as="sourcePoint"/>
+            <mxPoint x="295" y="230" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a2" value="2. GET /barang" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="305" y="260" as="sourcePoint"/>
+            <mxPoint x="495" y="260" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a3" value="3. get_all_barang()" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="505" y="290" as="sourcePoint"/>
+            <mxPoint x="855" y="290" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a4" value="4. SELECT * FROM barang" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="865" y="320" as="sourcePoint"/>
+            <mxPoint x="1035" y="320" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a5" value="5. Return list barang" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1035" y="350" as="sourcePoint"/>
+            <mxPoint x="505" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a6" value="6. Render table view" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="495" y="380" as="sourcePoint"/>
+            <mxPoint x="125" y="380" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a7" value="7. Tambah barang baru" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="125" y="420" as="sourcePoint"/>
+            <mxPoint x="295" y="420" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a8" value="8. POST /barang/create" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="305" y="450" as="sourcePoint"/>
+            <mxPoint x="495" y="450" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a9" value="9. Validate input" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="505" y="480" as="sourcePoint"/>
+            <mxPoint x="505" y="510" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="560" y="480"/>
+              <mxPoint x="560" y="510"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a10" value="10. create_barang()" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="505" y="540" as="sourcePoint"/>
+            <mxPoint x="855" y="540" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a11" value="11. INSERT INTO barang" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="865" y="570" as="sourcePoint"/>
+            <mxPoint x="1035" y="570" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a12" value="12. Return success" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1035" y="600" as="sourcePoint"/>
+            <mxPoint x="125" y="600" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a13" value="13. Kelola User" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="125" y="650" as="sourcePoint"/>
+            <mxPoint x="295" y="650" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a14" value="14. GET /user" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="305" y="680" as="sourcePoint"/>
+            <mxPoint x="675" y="680" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a15" value="15. get_all_users()" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="685" y="710" as="sourcePoint"/>
+            <mxPoint x="855" y="710" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a16" value="16. SELECT * FROM user_account" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="865" y="740" as="sourcePoint"/>
+            <mxPoint x="1035" y="740" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a17" value="17. Return users" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1035" y="770" as="sourcePoint"/>
+            <mxPoint x="685" y="770" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a18" value="18. Tambah user" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="125" y="810" as="sourcePoint"/>
+            <mxPoint x="295" y="810" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a19" value="19. POST /user/create" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="305" y="840" as="sourcePoint"/>
+            <mxPoint x="675" y="840" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a20" value="20. Hash password" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="685" y="870" as="sourcePoint"/>
+            <mxPoint x="685" y="900" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="740" y="870"/>
+              <mxPoint x="740" y="900"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a21" value="21. INSERT INTO user_account" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="865" y="930" as="sourcePoint"/>
+            <mxPoint x="1035" y="930" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a22" value="22. Return success" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1035" y="960" as="sourcePoint"/>
+            <mxPoint x="125" y="960" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a_note" value="Fitur Admin:&#xa;- Full CRUD barang, kategori, user&#xa;- Input pembelian stok&#xa;- Backup database&#xa;- Akses semua laporan&#xa;- Konfigurasi sistem" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f8cecc;strokeColor=#b85450;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1020" width="220" height="100" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

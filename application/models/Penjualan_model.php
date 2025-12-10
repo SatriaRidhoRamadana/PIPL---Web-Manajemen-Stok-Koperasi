@@ -53,6 +53,18 @@ class Penjualan_model extends CI_Model
                         ->result();
     }
 
+    public function get_between_kasir($start, $end, $user_id)
+    {
+        return $this->db->select('penjualan.*, user_account.full_name as kasir_name')
+                        ->join('user_account', 'user_account.id_user = penjualan.id_user', 'left')
+                        ->where('DATE(tanggal) >=', $start)
+                        ->where('DATE(tanggal) <=', $end)
+                        ->where('penjualan.id_user', $user_id)
+                        ->order_by('tanggal', 'DESC')
+                        ->get($this->table)
+                        ->result();
+    }
+
     public function create($data, $items)
     {
         $this->db->trans_start();
