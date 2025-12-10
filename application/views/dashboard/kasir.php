@@ -1,17 +1,47 @@
 <div class="row">
     <div class="col-lg-4">
-        <div class="card p-4 text-center">
-            <h5>Transaksi Baru</h5>
-            <p class="text-muted">Mulai proses penjualan</p>
-            <a href="<?= site_url('penjualan/create'); ?>" class="btn btn-primary">Buat Transaksi</a>
-        </div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">Riwayat Penjualan</h5>
+                <small class="text-muted">Periode: <?= date('d/m/Y', strtotime($start_date)); ?> - <?= date('d/m/Y', strtotime($end_date)); ?></small>
+            </div>
+            <?= form_open('dashboard', ['method' => 'get', 'class' => 'row g-2 mb-3']); ?>
     </div>
     <div class="col-lg-8">
         <div class="card p-3">
-            <h5 class="mb-3">Riwayat Penjualan</h5>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">Riwayat Penjualan</h5>
+                <small class="text-muted">Periode: <?= date('d/m/Y', strtotime($start_date)); ?> - <?= date('d/m/Y', strtotime($end_date)); ?></small>
+            </div>
             <?= form_open('dashboard', ['method' => 'get', 'class' => 'row g-2 mb-3']); ?>
                 <div class="col-md-4">
                     <input type="date" name="start_date" class="form-control form-control-sm" value="<?= $start_date; ?>" placeholder="Mulai">
+
+            <div class="row g-2 mb-3">
+                <div class="col-md-4">
+                    <div class="card border-primary">
+                        <div class="card-body py-2 text-center">
+                            <div class="text-muted small">Total Transaksi</div>
+                            <div class="fw-bold h5 mb-0"><?= $total_transaksi; ?></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-success">
+                        <div class="card-body py-2 text-center">
+                            <div class="text-muted small">Total Omzet</div>
+                            <div class="fw-bold h5 mb-0 text-success">Rp <?= number_format($total_omzet, 0, ',', '.'); ?></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-info">
+                        <div class="card-body py-2 text-center">
+                            <div class="text-muted small">Rata/Transaksi</div>
+                            <div class="fw-bold h5 mb-0 text-info">Rp <?= number_format($rata_transaksi, 0, ',', '.'); ?></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
                 </div>
                 <div class="col-md-4">
                     <input type="date" name="end_date" class="form-control form-control-sm" value="<?= $end_date; ?>" placeholder="Sampai">
@@ -25,7 +55,7 @@
                     <thead>
                         <tr>
                             <th>Kode</th>
-                            <th>Waktu</th>
+                            <th>Tanggal</th>
                             <th class="text-end">Total</th>
                             <th></th>
                         </tr>
@@ -34,7 +64,7 @@
                         <?php foreach ($transactions as $row): ?>
                             <tr>
                                 <td><?= $row->kode_penjualan; ?></td>
-                                <td><?= date('H:i', strtotime($row->tanggal)); ?></td>
+                                <td><?= date('d/m/Y H:i', strtotime($row->tanggal)); ?></td>
                                 <td class="text-end">Rp <?= number_format($row->total, 0, ',', '.'); ?></td>
                                 <td class="text-end">
                                     <a href="<?= site_url('penjualan/show/'.$row->id_penjualan); ?>" class="btn btn-sm btn-outline-primary">Detail</a>

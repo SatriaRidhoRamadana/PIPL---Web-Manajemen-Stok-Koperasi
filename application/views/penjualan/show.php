@@ -89,20 +89,30 @@
 }
 
 @media print {
-    .btn-actions {
+    .btn-actions,
+    .no-print,
+    nav {
         display: none !important;
     }
-    .no-print {
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+    }
+
+    .app-background {
+        padding: 0 !important;
+        background: #fff !important;
+    }
+
+    .app-background > *:not(#struk-container) {
         display: none !important;
     }
-    body > :not(#struk-container),
-    body > nav,
-    body > .container-fluid {
-        display: none !important;
-    }
+
     #struk-container {
         width: 80mm;
-        margin: 0;
+        margin: 0 auto;
         padding: 5mm;
         box-shadow: none;
         page-break-after: avoid;

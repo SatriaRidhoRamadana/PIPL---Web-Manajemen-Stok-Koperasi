@@ -18,11 +18,22 @@ class Dashboard extends MY_Controller
             check_role('kasir');
             $start = $this->input->get('start_date') ?: date('Y-m-d', strtotime('-30 days'));
             $end = $this->input->get('end_date') ?: date('Y-m-d');
+            $transactions = $this->Penjualan_model->get_between_kasir($start, $end, current_user('user_id'));
+
+            $total_transaksi = count($transactions);
+            $total_omzet = 0;
+            foreach ($transactions as $trx) {
+                $total_omzet += $trx->total;
+            }
+
             $data = array(
                 'title' => 'Dashboard Kasir',
-                'transactions' => $this->Penjualan_model->get_between_kasir($start, $end, current_user('user_id')),
+                'transactions' => $transactions,
                 'start_date' => $start,
                 'end_date' => $end,
+                'total_transaksi' => $total_transaksi,
+                'total_omzet' => $total_omzet,
+                'rata_transaksi' => $total_transaksi > 0 ? $total_omzet / $total_transaksi : 0,
             );
             $this->render('dashboard/kasir', $data);
             return;
