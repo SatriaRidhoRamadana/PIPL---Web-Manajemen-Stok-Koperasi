@@ -163,7 +163,14 @@ footer{ margin-top: 1.5rem; }
 }
 
 /* Buttons: ensure readable text color on colored buttons */
-.btn{ color: #fff !important; }
+.btn-primary,
+.btn-success,
+.btn-danger,
+.btn-warning,
+.btn-info,
+.btn-dark { 
+    color: #fff !important; 
+}
 
 /* Outline buttons: dark text on white/transparent background */
 .btn-outline-primary,
