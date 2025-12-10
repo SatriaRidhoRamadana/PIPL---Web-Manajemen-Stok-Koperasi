@@ -67,7 +67,7 @@
                                 <td><?= date('d/m/Y H:i', strtotime($row->tanggal)); ?></td>
                                 <td class="text-end">Rp <?= number_format($row->total, 0, ',', '.'); ?></td>
                                 <td class="text-end">
-                                    <a href="<?= site_url('penjualan/show/'.$row->id_penjualan); ?>" class="btn btn-sm btn-outline-primary">Detail</a>
+                                    <a href="<?= site_url('penjualan/show/'.$row->id_penjualan); ?>" class="btn btn-sm btn-outline-secondary text-dark">Detail</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
