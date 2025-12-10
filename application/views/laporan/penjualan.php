@@ -1,8 +1,10 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h4 class="mb-0">Laporan Penjualan</h4>
-    <button class="btn btn-primary" onclick="window.print();">Cetak</button>
+    <button class="btn btn-primary no-print" onclick="window.print();">Cetak</button>
 </div>
-<div class="card p-4">
+
+<!-- Filter Tanggal -->
+<div class="card p-4 mb-4">
     <?= form_open('laporan/penjualan', ['method' => 'get', 'class' => 'row g-3']); ?>
         <div class="col-md-4">
             <label class="form-label">Mulai</label>
@@ -16,9 +18,49 @@
             <button class="btn btn-primary w-100">Terapkan</button>
         </div>
     <?= form_close(); ?>
+</div>
 
-    <div class="table-responsive mt-4">
-        <table class="table table-striped">
+<!-- Analisis Penjualan -->
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card border-primary">
+            <div class="card-body text-center">
+                <h6 class="text-muted">Total Transaksi</h6>
+                <h3 class="text-primary"><?= $total_transaksi; ?></h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-success">
+            <div class="card-body text-center">
+                <h6 class="text-muted">Total Omzet</h6>
+                <h4 class="text-success">Rp <?= number_format($total_omzet, 0, ',', '.'); ?></h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-info">
+            <div class="card-body text-center">
+                <h6 class="text-muted">Rata-rata/Transaksi</h6>
+                <h4 class="text-info">Rp <?= number_format($rata_transaksi, 0, ',', '.'); ?></h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card border-warning">
+            <div class="card-body text-center">
+                <h6 class="text-muted">Total Uang Masuk</h6>
+                <h4 class="text-warning">Rp <?= number_format($total_uang_masuk, 0, ',', '.'); ?></h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Detail Tabel -->
+<div class="card p-4">
+    <h6 class="mb-3">Detail Transaksi</h6>
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
             <thead>
                 <tr>
                     <th>Kode</th>
@@ -28,8 +70,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php $grand = 0; ?>
-                <?php foreach ($penjualan as $row): $grand += $row->total; ?>
+                <?php foreach ($penjualan as $row): ?>
                     <tr>
                         <td><?= $row->kode_penjualan; ?></td>
                         <td><?= date('d/m/Y H:i', strtotime($row->tanggal)); ?></td>
@@ -38,12 +79,6 @@
                     </tr>
                 <?php endforeach; ?>
             </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="3" class="text-end">Grand Total</th>
-                    <th class="text-end">Rp <?= number_format($grand, 0, ',', '.'); ?></th>
-                </tr>
-            </tfoot>
         </table>
     </div>
 </div>

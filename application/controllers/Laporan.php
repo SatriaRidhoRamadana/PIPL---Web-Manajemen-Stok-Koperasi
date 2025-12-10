@@ -16,11 +16,26 @@ class Laporan extends MY_Controller
         $start = $this->input->get('start_date') ?: date('Y-m-01');
         $end = $this->input->get('end_date') ?: date('Y-m-d');
 
+        $penjualan = $this->Penjualan_model->get_between($start, $end);
+        
+        // Hitung analisis
+        $total_transaksi = count($penjualan);
+        $total_omzet = 0;
+        $total_uang_masuk = 0;
+        foreach ($penjualan as $p) {
+            $total_omzet += $p->total;
+            $total_uang_masuk += $p->bayar;
+        }
+        
         $data = array(
             'title' => 'Laporan Penjualan',
-            'penjualan' => $this->Penjualan_model->get_between($start, $end),
+            'penjualan' => $penjualan,
             'start_date' => $start,
             'end_date' => $end,
+            'total_transaksi' => $total_transaksi,
+            'total_omzet' => $total_omzet,
+            'total_uang_masuk' => $total_uang_masuk,
+            'rata_transaksi' => $total_transaksi > 0 ? $total_omzet / $total_transaksi : 0,
         );
         $this->render('laporan/penjualan', $data);
     }

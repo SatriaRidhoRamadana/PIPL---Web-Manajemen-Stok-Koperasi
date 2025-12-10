@@ -1,36 +1,8 @@
 <style>
-@media print {
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    html, body {
-        width: 100%;
-        height: 100%;
-    }
-    body {
-        width: 80mm;
-        margin: 0 auto;
-    }
-    .no-print,
-    .btn-actions {
-        display: none !important;
-    }
-    body > * {
-        display: none !important;
-    }
-    body > #struk-container {
-        display: block !important;
-    }
-    #struk-container {
-        display: block !important;
-        visibility: visible;
-        width: 100%;
-        margin: 0;
-        padding: 5mm;
-        box-shadow: none;
-    }
+.btn-actions {
+    text-align: center;
+    margin: 20px 0;
+    display: block;
 }
 
 #struk-container {
@@ -40,7 +12,6 @@
     background: white;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    page-break-after: avoid;
 }
 
 .struk-header {
@@ -48,7 +19,6 @@
     border-bottom: 1px dashed #000;
     padding-bottom: 10px;
     margin-bottom: 10px;
-    page-break-inside: avoid;
 }
 
 .struk-logo {
@@ -76,7 +46,6 @@
 .struk-item {
     margin-bottom: 8px;
     font-size: 12px;
-    page-break-inside: avoid;
 }
 
 .struk-item-name {
@@ -93,7 +62,6 @@
     margin-top: 10px;
     border-top: 1px dashed #000;
     padding-top: 10px;
-    page-break-inside: avoid;
 }
 
 .struk-row {
@@ -120,14 +88,24 @@
     font-size: 11px;
 }
 
-.btn-actions {
-    text-align: center;
-    margin: 20px 0;
-}
-
-@media screen {
+@media print {
     .btn-actions {
-        display: block;
+        display: none !important;
+    }
+    .no-print {
+        display: none !important;
+    }
+    body > :not(#struk-container),
+    body > nav,
+    body > .container-fluid {
+        display: none !important;
+    }
+    #struk-container {
+        width: 80mm;
+        margin: 0;
+        padding: 5mm;
+        box-shadow: none;
+        page-break-after: avoid;
     }
 }
 </style>
