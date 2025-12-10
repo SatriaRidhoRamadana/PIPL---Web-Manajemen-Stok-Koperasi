@@ -49,8 +49,8 @@
                     <?php endif; ?>
                     <?php if (has_role('kasir')): ?>
                         <li class="nav-item"><a class="nav-link" href="<?= site_url('penjualan/create'); ?>">Transaksi Baru</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?= site_url('penjualan'); ?>">Riwayat Hari Ini</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?= site_url('laporan/penjualan_harian'); ?>">Laporan Harian</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?= site_url('penjualan'); ?>">Riwayat Penjualan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?= site_url('laporan/penjualan_harian'); ?>">Laporan Penjualan</a></li>
                     <?php endif; ?>
                 </ul>
                 <?php if (is_logged_in()): ?>
