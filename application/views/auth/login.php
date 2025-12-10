@@ -47,7 +47,8 @@
                 <div class="col-md-5">
                     <div class="card p-4">
                         <div class="text-center mb-4">
-                            <h3 class="mb-0">Koperasi POS</h3>
+                            <img src="<?= base_url('assets/img/MAN1Batam.png'); ?>" alt="Logo MAN 1 Batam" style="width: 80px; height: 80px; margin-bottom: 15px;">
+                            <h3 class="mb-0">Koperasi MAN 1 Batam</h3>
                             <small class="text-muted">Silakan login untuk melanjutkan</small>
                         </div>
                         <?php if (!empty($error)): ?>

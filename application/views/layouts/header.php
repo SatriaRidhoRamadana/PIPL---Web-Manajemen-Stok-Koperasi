@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= isset($title) ? $title.' | ' : ''; ?>Koperasi POS</title>
+    <title><?= isset($title) ? $title.' | ' : ''; ?>Koperasi MAN 1 Batam</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/css/custom.css'); ?>">
@@ -11,7 +11,10 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="<?= site_url('dashboard'); ?>">Koperasi</a>
+            <a class="navbar-brand d-flex align-items-center" href="<?= site_url('dashboard'); ?>">
+                <img src="<?= base_url('assets/img/MAN1Batam.png'); ?>" alt="Logo" style="width: 35px; height: 35px; margin-right: 10px;">
+                <span>Koperasi MAN 1 Batam</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>

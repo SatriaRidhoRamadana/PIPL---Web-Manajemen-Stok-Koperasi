@@ -148,14 +148,14 @@ application/
   - Chart penjualan 7 hari terakhir
 - **Kasir**: Transaksi penjualan hari ini
 
-### 3. Manajemen Barang
+### 3. Manajemen Barang (Admin Only)
 - CRUD barang (Create, Read, Update, Delete)
 - Kategori barang
 - SKU (Stock Keeping Unit)
 - Stok management
 - Harga jual dan satuan
 
-### 4. Transaksi Penjualan
+### 4. Transaksi Penjualan (Kasir Only)
 - Point of Sale interface
 - Pencarian barang
 - Keranjang belanja
@@ -164,13 +164,13 @@ application/
 - Update stok otomatis
 - Cetak nota
 
-### 5. Transaksi Pembelian
+### 5. Transaksi Pembelian (Admin)
 - Pencatatan pembelian barang
 - Update stok masuk
 - Detail pembelian per barang
 - Generate kode pembelian otomatis
 
-### 6. Pelaporan
+### 6. Pelaporan (ADMIN dan Owner)
 - Laporan penjualan harian/mingguan/bulanan
 - Laporan pembelian
 - Laporan stok barang
