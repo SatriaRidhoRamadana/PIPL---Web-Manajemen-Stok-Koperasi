@@ -165,6 +165,23 @@ footer{ margin-top: 1.5rem; }
 /* Buttons: ensure readable text color on colored buttons */
 .btn{ color: #fff !important; }
 
+/* Outline buttons: dark text on white/transparent background */
+.btn-outline-primary,
+.btn-outline-secondary,
+.btn-outline-success,
+.btn-outline-danger,
+.btn-outline-warning,
+.btn-outline-info,
+.btn-outline-light,
+.btn-outline-dark { 
+    color: #15302a !important; 
+    background: #fff !important;
+}
+.btn-outline-primary:hover,
+.btn-outline-secondary:hover { 
+    color: #fff !important; 
+}
+
 /* Keep form controls readable: dark text on light background */
 .form-control, input, textarea, select{ color: #15302a !important; }
 
